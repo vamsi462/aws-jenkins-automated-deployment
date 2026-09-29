@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'master', url: 'https://github.com/vamsi462/docker-assignment-node-express-flask'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                dir('backend') {
+                    sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install -r requirements.txt
+                    '''
+                }
+            }
+        }
+        stage('Restart Application') {
+            steps {
+                dir('backend') {
+                    sh 'pm2 restart flask-backend || pm2 start ./venv/bin/python --name "flask-backend" -- app.py'
+                }
+            }
+        }
+    }
+}
