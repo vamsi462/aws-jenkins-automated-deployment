@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'master', url: 'https://github.com/vamsi462/docker-assignment-node-express-flask'
+                git branch: 'master', url: 'https://github.com/vamsi462/aws-jenkins-automated-deployment'
             }
         }
         stage('Install Dependencies') {
