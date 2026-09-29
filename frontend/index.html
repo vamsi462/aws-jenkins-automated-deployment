@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="padding: 20px; font-family: Arial">
+    <h2>Add a To-Do Item</h2>
+
+    <form
+      action="/submit"
+      method="POST"
+      style="display: flex; flex-direction: column; width: 300px; gap: 10px"
+    >
+      <label>Item Name:</label>
+      <input type="text" name="itemName" required />
+
+      <label>Item Description:</label>
+      <input type="text" name="itemDescription" required />
+
+      <label>Item ID:</label>
+      <input type="text" name="itemId" required />
+
+      <label>Item UUID:</label>
+      <input type="text" name="itemUuid" required />
+
+      <label>Item Hash:</label>
+      <input type="text" name="itemHash" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
